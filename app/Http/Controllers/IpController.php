@@ -37,7 +37,8 @@ class IpController extends Controller
         }
 
         return view('ippage', [  'ip' => $ip,
-                                'location'      => $location_data['country'],
+                                'city'      => $location_data['city'],
+                                'country'   => $location_data['country'],
                                 'weather'       => $weather,
                                 'iprecord'      => $store_ip,
                             ] );
