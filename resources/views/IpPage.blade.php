@@ -6,17 +6,17 @@
 </form>
 
 
-@if( $weather["weatherdata"] != 'false' )
- @foreach ( json_decode( $weather["weatherdata"]) as $weatherdata )
-    <div style="width: 180px; float: left;border: 2px solid grey; margin: 20px; padding: 20px;">
-        <img src="http://openweathermap.org/img/w/{{ $weatherdata->icon }}.png">
-        <br/>
-        {{ $weatherdata->day }}
-        <br/>
-        {{ $weatherdata->description }}
-    </div>
+@if( $location != null )
+@foreach ( json_decode( $weather["weatherdata"]) as $weatherdata )
+<div style="width: 180px; float: left;border: 2px solid grey; margin: 20px; padding: 20px;">
+    <img src="http://openweathermap.org/img/w/{{ $weatherdata->icon }}.png">
+    <br/>
+    {{ $weatherdata->day }}
+    <br/>
+    {{ $weatherdata->description }}
+</div>
 
- @endforeach
+@endforeach
 
 @else
 <p>Sorry, there's no weather data for your location</p>
