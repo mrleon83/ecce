@@ -36,15 +36,6 @@ class IpController extends Controller
             $location_data['country'] = 'No data for this ip';
         }
 
-        return $this->returnBlade($ip, $location_data, $weather, $store_ip );
-    }
-
-
-
-    /**
-     * Return Blade template showing data
-     */
-    public function returnBlade($ip, $location_data, $weather,$store_ip ){
         return view('ippage', [  'ip' => $ip,
                                 'location'      => $location_data['country'],
                                 'weather'       => $weather,
@@ -207,6 +198,5 @@ class IpController extends Controller
     }
 
 }
-
 
 
